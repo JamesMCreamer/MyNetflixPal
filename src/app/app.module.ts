@@ -16,15 +16,20 @@ import { ViewReviewsComponent } from './view-reviews/view-reviews.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
     AddReviewComponent,
-    ViewReviewsComponent
+    ViewReviewsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +44,14 @@ import { Routes } from '@angular/router';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatCardModule,
+    MatGridListModule,
     RouterModule.forRoot([
       {
         path: '', component: MyNavComponent, children: [
           { path: 'add-review', component: AddReviewComponent },
-          { path: 'view-reviews', component: ViewReviewsComponent }
+          { path: 'view-reviews', component: ViewReviewsComponent },
+          { path: 'home', component: HomeComponent }
         ]
       },
     ]),
