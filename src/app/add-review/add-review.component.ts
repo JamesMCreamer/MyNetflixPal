@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-add-review',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddReviewComponent implements OnInit {
 
+  review: any = {}
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+onSubmit() {
+  console.log(this.review);
+}
 }

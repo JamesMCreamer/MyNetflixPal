@@ -20,6 +20,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -47,6 +50,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatGridListModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '', component: MyNavComponent, children: [

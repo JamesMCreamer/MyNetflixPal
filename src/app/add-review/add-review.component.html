@@ -1,1 +1,19 @@
-<p>add-review works!</p>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <mat-card class="review-card">
+      <mat-card-title>
+        Add an Article
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-card></mat-card>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea placeholder="Enter your comment..." rows="3" maxlength="300" matInput [(ngModel)]="article.text" name="article"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button type="submit">Save Article</button>
+      </mat-card-actions>
+    </mat-card>
+   </form>
+   <pre> {{ review | json }} </pre>
