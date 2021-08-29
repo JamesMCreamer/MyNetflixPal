@@ -1,19 +1,25 @@
-<form #form="ngForm" (ngSubmit)="onSubmit()">
-    <mat-card class="review-card">
-      <mat-card-title>
-        Add an Article
-      </mat-card-title>
-      <mat-card-content>
-        <mat-form-field>
-          <mat-card></mat-card>
-        </mat-form-field>
-        <mat-form-field>
-          <textarea placeholder="Enter your comment..." rows="3" maxlength="300" matInput [(ngModel)]="article.text" name="article"></textarea>
-        </mat-form-field>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button type="submit">Save Article</button>
-      </mat-card-actions>
-    </mat-card>
-   </form>
-   <pre> {{ review | json }} </pre>
+<div>
+  <h1 style="text-align: center;">Comment on an Article</h1>
+</div>
+<div class="mat-grid-list">
+  <mat-grid-list cols="2" rowHeight="700px" gutterSize="30px">
+      <mat-grid-tile *ngFor="let article of articles">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title style="text-align: center">{{article.title}}</mat-card-title>
+            <mat-card-subtitle>Written by {{article.author}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src={{article.urlToImage}} alt="Article Photo">
+          <mat-card-content>
+            <p>
+              {{article.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button id="AddReview">Add To My News</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>    
+</div>
+   

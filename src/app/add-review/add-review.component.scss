@@ -1,10 +1,37 @@
-.review-card {
-    min-width: 150px;
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
- }
- 
- .mat-form-field {
-    width: 100%;
- }
+
+h1 {
+   font-size: 45px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-top: 10px;
+}
+p {
+font-family: Lato;
+}
+.example-card {
+max-width: 500px;
+margin: 2px
+}
+
+mat-card-subtitle{
+font-size:30px
+}
+
+mat-card-title{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color:black;
+font-size:70px;
+
+
+}
+
+mat-card{
+   background-color:rgba(214, 214, 214, 0.548)
+}
+
+mat-card-subtitle{
+   font-size: 18px;
+}
+
+mat-card-actions{
+   color: darkgoldenrod;
+}

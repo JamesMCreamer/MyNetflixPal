@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-add-review',
@@ -7,14 +7,16 @@ import { HomeComponent } from '../home/home.component';
   styleUrls: ['./add-review.component.scss']
 })
 export class AddReviewComponent implements OnInit {
-
+articles;
   review: any = {}
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.apiService.getNews().subscribe((data)=>{
+      console.log(data);
+      this.articles = data['articles'];
+  });
   }
-onSubmit() {
-  console.log(this.review);
-}
+  
 }
