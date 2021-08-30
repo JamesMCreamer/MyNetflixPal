@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 @Component({
  selector: 'app-add-review',
  templateUrl: './add-review.component.html',
@@ -9,13 +9,18 @@ export class AddReviewComponent implements OnInit {
  
   review: any = {};
  
-  constructor() { }
+  constructor(private db: AngularFireDatabase) { }
  
   ngOnInit() {
  
   }
  
   onSubmit() {
-    console.log(this.review);
+    this.review.date = new Date(this.review.date).valueOf();
+    this.db.list('reviews').push(this.review)
+    .then(_ => {
+      this.review = {}
+      console.log('success')
+    })
   }
 }
