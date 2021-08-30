@@ -1,6 +1,5 @@
-<form #form="ngForm" (ngSubmit)="onSubmit()">
 <div class="mat-grid-list">
-  <h1 style="text-align: center;">Browse Articles</h1>
+  <h1 style="text-align: center;">News from Around The World</h1>
     <mat-grid-list cols="2" rowHeight="700px" gutterSize="30px">
         <mat-grid-tile *ngFor="let article of articles">
           <mat-card class="card">
@@ -21,5 +20,5 @@
         </mat-grid-tile>
       </mat-grid-list>    
 </div>
-</form>
-<pre>{{ memory | json }}</pre>
+
+
